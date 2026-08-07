@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/Logo.png";
 
 function Navbar() {
   return (
@@ -11,6 +12,7 @@ function Navbar() {
           to="/"
           className="navbar-brand fw-bold text-dark"
         >
+        <img src={Logo} alt="Logo" className="me-2 " style={{ width: '40px', height: '40px' }} />
           Nexus Admin
         </Link>
 
