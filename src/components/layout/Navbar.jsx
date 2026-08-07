@@ -1,28 +1,105 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div>
-        <div className="navbar bg-base-100">
-            <h2>Nexus Admin</h2>
+    <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+      <div className="container-fluid px-4">
 
-            <ul>
-                <li>Features</li>
-                <li>Resources</li>
-                <li>Company</li>
-                <li>Pricing</li>
-                <li>Docs</li>
-            </ul>
+        {/* Brand */}
+        <Link
+          to="/"
+          className="navbar-brand fw-bold text-dark"
+        >
+          Nexus Admin
+        </Link>
 
-            <ul>
-                <li>Sign In</li>
-                <li>Get Started</li>
-                <li></li>
-            </ul>
+        {/* Mobile Toggle */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
+        {/* Navbar Content */}
+        <div
+          className="collapse navbar-collapse"
+          id="mainNavbar"
+        >
+          {/* Main Navigation */}
+          <ul className="navbar-nav mx-auto gap-lg-3">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/features">
+                Features
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/resources">
+                Resources
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/company">
+                Company
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/pricing">
+                Pricing
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/docs">
+                Docs
+              </Link>
+            </li>
+          </ul>
+
+          {/* Actions */}
+          <div className="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0">
+
+            <Link
+              to="/signin"
+              className="btn btn-outline-dark"
+            >
+              Sign In
+            </Link>
+
+            <Link
+              to="/login"
+              className="btn btn-outline-primary"
+            >
+              Login
+            </Link>
+
+            <Link
+              to="/get-started"
+              className="btn btn-primary"
+            >
+              Get Started
+            </Link>
+
+          </div>
         </div>
-    </div>
-  )
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
