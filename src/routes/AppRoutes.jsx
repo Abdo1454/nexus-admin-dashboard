@@ -3,35 +3,38 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
 import ProtectedRoute from "./ProtectedRoute";
 
-// Pages
-// import Dashboard from "../pages/Dashboard/Dashboard";
+import Home from "../pages/Home/Home";
 
 function AppRoutes() {
   return (
     <Routes>
+
+      {/* Public */}
+      <Route path="/" element={<Home />} />
+
       {/* Protected Dashboard */}
       <Route element={<ProtectedRoute />}>
-        <Route
-          path="/dashboard"
-          element={
-            <DashboardLayout>
-              {/* <Dashboard /> */}
-            </DashboardLayout>
-          }
-        />
-      </Route>
+        <Route element={<DashboardLayout />}>
 
-      {/* Default Route */}
-      <Route
-        path="/"
-        element={<Navigate to="/dashboard" replace />}
-      />
+          <Route
+            path="/dashboard"
+            element={
+              <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to Nexus Admin.</p>
+              </div>
+            }
+          />
+
+        </Route>
+      </Route>
 
       {/* 404 */}
       <Route
         path="*"
-        element={<Navigate to="/dashboard" replace />}
+        element={<Navigate to="/" replace />}
       />
+
     </Routes>
   );
 }

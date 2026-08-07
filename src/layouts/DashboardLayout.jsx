@@ -1,28 +1,34 @@
-import Sidebar from "../components/layout/Sidebar";
-import Topbar from "../components/layout/Topbar";
-import MobileOverlay from "../components/layout/MobileOverlay";
-import Navbar from "../components/layout/Navbar";
+import { Outlet } from "react-router-dom";
 
-function DashboardLayout({ children }) {
+import Sidebar from "../components/layout/Sidebar";
+// import Topbar from "../components/layout/Topbar";
+import MobileOverlay from "../components/layout/MobileOverlay";
+
+function DashboardLayout() {
   return (
-    <div className="min-vh-100 bg-light">
-        <Navbar />
+    <div>
+
       {/* Sidebar */}
       <Sidebar />
 
       {/* Mobile Overlay */}
       <MobileOverlay />
 
-      {/* Main Content Area */}
-      <div className="d-flex flex-column min-vh-100">
+      {/* Main Content */}
+      <div className="d-flex flex-column flex-grow-1 min-vh-100">
+
         {/* Topbar */}
-        <Topbar />
+        {/* <Topbar /> */}
 
         {/* Page Content */}
         <main className="flex-grow-1 p-3 p-md-4">
-          <div className="container-fluid">{children}</div>
+          <div className="container-fluid">
+            <Outlet />
+          </div>
         </main>
+
       </div>
+
     </div>
   );
 }
