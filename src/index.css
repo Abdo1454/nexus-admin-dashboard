@@ -1,0 +1,495 @@
+/* ========================================
+   NEXUS ADMIN DASHBOARD
+   Global Design System
+======================================== */
+
+:root {
+  /* Brand */
+  --nexus-primary: #6366f1;
+  --nexus-primary-hover: #4f46e5;
+  --nexus-primary-light: #eef2ff;
+
+  /* Background */
+  --nexus-bg: #f8fafc;
+  --nexus-surface: #ffffff;
+  --nexus-surface-hover: #f8fafc;
+
+  /* Text */
+  --nexus-text: #0f172a;
+  --nexus-text-secondary: #475569;
+  --nexus-text-muted: #94a3b8;
+
+  /* Border */
+  --nexus-border: #e2e8f0;
+
+  /* Status */
+  --nexus-success: #10b981;
+  --nexus-warning: #f59e0b;
+  --nexus-danger: #ef4444;
+  --nexus-info: #3b82f6;
+
+  /* Layout */
+  --nexus-sidebar-width: 260px;
+  --nexus-sidebar-collapsed: 80px;
+  --nexus-topbar-height: 70px;
+
+  /* Radius */
+  --nexus-radius-sm: 8px;
+  --nexus-radius: 12px;
+  --nexus-radius-lg: 16px;
+
+  /* Shadows */
+  --nexus-shadow-sm:
+    0 1px 2px rgba(15, 23, 42, 0.05);
+
+  --nexus-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.08);
+
+  --nexus-shadow-lg:
+    0 10px 30px rgba(15, 23, 42, 0.10);
+
+  /* Typography */
+  --nexus-font:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ========================================
+   Dark Mode
+======================================== */
+
+[data-theme="dark"] {
+  --nexus-bg: #0f172a;
+  --nexus-surface: #1e293b;
+  --nexus-surface-hover: #263449;
+
+  --nexus-text: #f8fafc;
+  --nexus-text-secondary: #cbd5e1;
+  --nexus-text-muted: #94a3b8;
+
+  --nexus-border: #334155;
+
+  --nexus-primary-light: rgba(99, 102, 241, 0.15);
+
+  --nexus-shadow-sm:
+    0 1px 2px rgba(0, 0, 0, 0.25);
+
+  --nexus-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.30);
+
+  --nexus-shadow-lg:
+    0 10px 30px rgba(0, 0, 0, 0.40);
+}
+
+/* ========================================
+   Global Reset
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: var(--nexus-font);
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: var(--nexus-text);
+  background: var(--nexus-bg);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* ========================================
+   React Root
+======================================== */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ========================================
+   Typography
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--nexus-text);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* ========================================
+   Links
+======================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--nexus-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Forms
+======================================== */
+
+.form-control,
+.form-select {
+  min-height: 44px;
+
+  border-color: var(--nexus-border);
+  border-radius: var(--nexus-radius-sm);
+
+  color: var(--nexus-text);
+  background-color: var(--nexus-surface);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--nexus-primary);
+
+  box-shadow:
+    0 0 0 0.2rem rgba(99, 102, 241, 0.15);
+
+  background-color: var(--nexus-surface);
+  color: var(--nexus-text);
+}
+
+.form-control::placeholder {
+  color: var(--nexus-text-muted);
+}
+
+/* ========================================
+   Nexus Card
+======================================== */
+
+.nexus-card {
+  background: var(--nexus-surface);
+  border: 1px solid var(--nexus-border);
+  border-radius: var(--nexus-radius);
+  box-shadow: var(--nexus-shadow-sm);
+}
+
+/* ========================================
+   Primary Button
+======================================== */
+
+.btn-nexus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 8px 18px;
+
+  border: 1px solid var(--nexus-primary);
+  border-radius: var(--nexus-radius-sm);
+
+  background: var(--nexus-primary);
+  color: #ffffff;
+
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn-nexus:hover {
+  background: var(--nexus-primary-hover);
+  border-color: var(--nexus-primary-hover);
+  color: #ffffff;
+}
+
+.btn-nexus:active {
+  transform: translateY(1px);
+}
+
+/* ========================================
+   Secondary Button
+======================================== */
+
+.btn-nexus-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 8px 18px;
+
+  border: 1px solid var(--nexus-border);
+  border-radius: var(--nexus-radius-sm);
+
+  background: var(--nexus-surface);
+  color: var(--nexus-text);
+
+  font-weight: 500;
+}
+
+.btn-nexus-outline:hover {
+  background: var(--nexus-surface-hover);
+}
+
+/* ========================================
+   Badge
+======================================== */
+
+.nexus-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ========================================
+   Dashboard Layout
+======================================== */
+
+.nexus-layout {
+  min-height: 100vh;
+  background: var(--nexus-bg);
+}
+
+.nexus-main {
+  min-height: 100vh;
+
+  margin-left: var(--nexus-sidebar-width);
+
+  transition: margin-left 0.25s ease;
+}
+
+.nexus-content {
+  padding: 24px;
+}
+
+/* ========================================
+   Sidebar
+======================================== */
+
+.nexus-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+
+  width: var(--nexus-sidebar-width);
+  height: 100vh;
+
+  background: var(--nexus-surface);
+  border-right: 1px solid var(--nexus-border);
+
+  transition:
+    width 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nexus-sidebar.collapsed {
+  width: var(--nexus-sidebar-collapsed);
+}
+
+.nexus-main.sidebar-collapsed {
+  margin-left: var(--nexus-sidebar-collapsed);
+}
+
+/* ========================================
+   Topbar
+======================================== */
+
+.nexus-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+
+  height: var(--nexus-topbar-height);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: var(--nexus-surface);
+  border-bottom: 1px solid var(--nexus-border);
+}
+
+/* ========================================
+   Tables
+======================================== */
+
+.nexus-table {
+  width: 100%;
+  margin-bottom: 0;
+  color: var(--nexus-text);
+}
+
+.nexus-table th {
+  padding: 14px 16px;
+
+  color: var(--nexus-text-secondary);
+
+  background: var(--nexus-surface-hover);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.nexus-table td {
+  padding: 14px 16px;
+
+  border-color: var(--nexus-border);
+
+  vertical-align: middle;
+}
+
+/* ========================================
+   Scrollbar
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nexus-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 991.98px) {
+  .nexus-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .nexus-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .nexus-main,
+  .nexus-main.sidebar-collapsed {
+    margin-left: 0;
+  }
+
+  .nexus-content {
+    padding: 20px;
+  }
+
+  .nexus-topbar {
+    padding: 0 20px;
+  }
+}
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .nexus-content {
+    padding: 16px;
+  }
+
+  .nexus-topbar {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .btn-nexus,
+  .btn-nexus-outline {
+    min-height: 44px;
+  }
+}
