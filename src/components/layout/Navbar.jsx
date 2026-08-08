@@ -4,7 +4,8 @@ import Logo from "../../assets/Logo.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+    <nav className="navbar  navbar-expand-lg bg-white border-bottom shadow-sm  sticky-top w-100 "   style={{ zIndex: 1030 }}
+>
       <div className="container-fluid px-4">
 
         {/* Brand */}

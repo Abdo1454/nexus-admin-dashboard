@@ -5,6 +5,8 @@ import TrustedCompanies from '../../components/home/TrustedCompanies';
 import AnalyticsPreview from "../../components/home/AnalyticsPreview";
 import Capabilities from "../../components/home/Capabilities";
 import Testimonials from "../../components/home/Testimonials";
+import CTA from "../../components/home/CTA";
+import Footer from "../../components/home/Footer";
 function Home() {
   return (
     <div>
@@ -14,6 +16,8 @@ function Home() {
         <Capabilities />
         <AnalyticsPreview />
         <Testimonials />
+        <CTA />
+        <Footer />
     </div>
   )
 }
