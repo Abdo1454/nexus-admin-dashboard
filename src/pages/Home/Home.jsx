@@ -4,6 +4,7 @@ import Navbar from '../../components/layout/Navbar';
 import TrustedCompanies from '../../components/home/TrustedCompanies';
 import AnalyticsPreview from "../../components/home/AnalyticsPreview";
 import Capabilities from "../../components/home/Capabilities";
+import Testimonials from "../../components/home/Testimonials";
 function Home() {
   return (
     <div>
@@ -12,6 +13,7 @@ function Home() {
         <TrustedCompanies />
         <Capabilities />
         <AnalyticsPreview />
+        <Testimonials />
     </div>
   )
 }
