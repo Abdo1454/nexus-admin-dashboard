@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 
 import Home from "../pages/Home/Home";
+import Login from "../pages/auth/Login";
 
 function AppRoutes() {
   return (
@@ -11,6 +12,7 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
 
     
+      <Route path="/login" element={<Login />} />
     
 
       {/* 404 */}

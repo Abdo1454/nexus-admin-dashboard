@@ -77,12 +77,12 @@ function Navbar() {
           {/* Actions */}
           <div className="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0">
 
-            <Link
+            {/* <Link
               to="/signin"
               className="btn btn-outline-dark"
             >
               Sign In
-            </Link>
+            </Link> */}
 
             <Link
               to="/login"
