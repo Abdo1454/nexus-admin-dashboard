@@ -3,6 +3,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 import Home from "../pages/Home/Home";
 import Login from "../pages/auth/Login";
+import CreateAccount from "../pages/auth/CreateAccount";
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
 
     
       <Route path="/login" element={<Login />} />
+      <Route path="/create-account" element={<CreateAccount />} />
     
 
       {/* 404 */}
